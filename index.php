@@ -1,4 +1,4 @@
-<?phpxcfv
+<?php
 include "koneksi.php";
 ?>
 <!DOCTYPE html>
@@ -89,37 +89,37 @@ https://templatemo.com/tm-562-space-dynamic
 
                         if (isset($_GET['no_dokumen'])) {
                             // id index exists
-                            $queryxx = mysqli_query($kon, "select * from surat_dokumen where no_surat_dokumen='".$_GET['no_dokumen']."'");
+                            $queryxx = mysqli_query($kon, "select * from surat_dokumen where no_surat_dokumen='" . $_GET['no_dokumen'] . "'");
                             $data = mysqli_fetch_array($queryxx);
-                            if (mysqli_num_rows($queryxx) > 0){
-                            echo "
+                            if (mysqli_num_rows($queryxx) > 0) {
+                                echo "
                             <div class='col-lg-8 align-self-center'>
                             <div class='left-content header-text wow fadeInLeft' data-wow-duration='1s' data-wow-delay='1s'>
 
-                            <h2> <em>Hasil</em <span></span> Pencarian Anda ".$data['no_surat_dokumen']."</h2>
-                            <h4> <em>Nama</em <span></span> Pemilik : <strong>".$data['nama_pemilik']."<strong></h4>
+                            <h2> <em>Hasil</em <span></span> Pencarian Anda " . $data['no_surat_dokumen'] . "</h2>
+                            <h4> <em>Nama</em <span></span> Pemilik : <strong>" . $data['nama_pemilik'] . "<strong></h4>
 <hr>
                             
                             ";
-                            $queryxxx = mysqli_query($kon, "select * from  file_surat_dokumen where id_surat_dokumen='".$data['id_surat_dokumen']."'");
-                            $no="1";
-                            while ($datax = mysqli_fetch_array($queryxxx)) {
-                            echo"
+                                $queryxxx = mysqli_query($kon, "select * from  file_surat_dokumen where id_surat_dokumen='" . $data['id_surat_dokumen'] . "'");
+                                $no = "1";
+                                while ($datax = mysqli_fetch_array($queryxxx)) {
+                                    echo "
                             FILE : 
                             <h4><span></span>Silahkan Klik
-                            <a href='admin/assets/file_surat_dokumen/".$datax['nm_file_surat_dokumen']."' onclick='window.open(this.href,&quot;popupwindow&quot;,&quot;status=0, height=500, width=650, scrollbars=yes, resizable=0, top=0, left=0&quot;); return false;' target='_blank'>File ".$no.".</a>
+                            <a href='admin/assets/file_surat_dokumen/" . $datax['nm_file_surat_dokumen'] . "' onclick='window.open(this.href,&quot;popupwindow&quot;,&quot;status=0, height=500, width=650, scrollbars=yes, resizable=0, top=0, left=0&quot;); return false;' target='_blank'>File " . $no . ".</a>
                             </h4>
                             ";
-                            }
+                                }
 
-                            echo"
+                                echo "
                             
                             </div>
                             </div>
                             ";
-                        }else{
-                            echo"data tidak ditemukan";
-                        }
+                            } else {
+                                echo "data tidak ditemukan";
+                            }
                         } else {
                         ?>
                             <div class="col-lg-6 align-self-center">
@@ -137,12 +137,12 @@ https://templatemo.com/tm-562-space-dynamic
                                     </form>
                                 </div>
                             </div>
-                        
-                        <div class="col-lg-6">
-                            <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                                <img src="assets/images/banner-right-image.png" alt="team meeting">
+
+                            <div class="col-lg-6">
+                                <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                                    <img src="assets/images/banner-right-image.png" alt="team meeting">
+                                </div>
                             </div>
-                        </div>
                         <?php
                         }
                         ?>
