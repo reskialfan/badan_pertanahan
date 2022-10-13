@@ -176,7 +176,6 @@ class M_dokumen extends CI_Model
 			$sql = " SELECT * from surat_dokumen sd join jenis_dokumen2 js on sd.jenis_suratdokumen=id_jenisdokumen2 join kelurahan kel on kel.id_kelurahan=sd.kelurahan  where sd.jenis_suratdokumen='" . $id . "' ";
 		} else {
 			$sql = " SELECT * from surat_dokumen sd join jenis_dokumen2 js on sd.jenis_suratdokumen=id_jenisdokumen2 join kelurahan kel on kel.id_kelurahan=sd.kelurahan  where sd.jenis_suratdokumen='" . $id . "' and sd.kelurahan='" . $id2 . "' ";
-
 		}
 
 		$data = $this->db->query($sql);
@@ -479,7 +478,7 @@ class M_dokumen extends CI_Model
 	{
 
 
-		$sql = "INSERT INTO surat_dokumen VALUES('','" . $data['no_surat_dokumen'] . "','" . $data['jenis_suratdokumen'] . "','" . $data['nama_pemilik'] . "','" . $data['luas_lahan'] . "','" . $data['luas_bangunan'] . "','" . $data['batas_sisi_barat'] . "','" . $data['batas_sisi_utara'] . "', '" . $data['batas_sisi_timur'] . "', '" . $data['batas_sisi_selatan'] . "', , '" . $data['kelurahan'] . "')";
+		$sql = "INSERT INTO surat_dokumen VALUES('','" . $data['no_surat_dokumen'] . "','" . $data['jenis_suratdokumen'] . "','" . $data['nama_pemilik'] . "','" . $data['luas_lahan'] . "','" . $data['luas_bangunan'] . "','" . $data['batas_sisi_barat'] . "','" . $data['batas_sisi_utara'] . "', '" . $data['batas_sisi_timur'] . "', '" . $data['batas_sisi_selatan'] . "', '" . $data['kelurahan'] . "')";
 		// $sql = strip_tags($sql);
 
 		$this->db->query($sql);
